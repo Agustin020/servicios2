@@ -1,0 +1,5 @@
+.dataTable tbody tr{
+    font-size: 12px;
+    min-height: 16px;
+    max-height: 16px;
+}

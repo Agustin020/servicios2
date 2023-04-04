@@ -1,0 +1,65 @@
+#headerInf{
+    padding: 0 0 0 0;
+    background-color: #393185;
+}
+#header{
+    margin-top: 0px;
+    padding: 0 0 0 0;
+    background-color: black;
+    width: 100%;
+}
+#headerMed{
+    padding: 0 0 0 0;
+    
+}
+#headerInf{
+    padding: 0 0 0 0;
+    background-color: #393185;
+}
+#tituloSup{
+    margin-top: 0px;
+    margin-left: -15px;
+    margin-right: -45px;
+    padding: 0 0 0 0;
+}
+#titulo{
+    margin-top: -100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 0 0 0 0;
+}
+
+.abajo{
+    margin-top: 240px;
+}
+.p{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0 0 0 0;
+}
+#bilyk{
+    margin-top: -20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0 0 0 0;
+}
+#guirao{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0 0 0 0;
+}
+.navbar-nav > li > a{
+    padding-top: 8px;
+    padding-bottom: 8px; 
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+}
+

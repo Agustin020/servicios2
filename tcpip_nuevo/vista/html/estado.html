@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Estados</title>
+        <link href="../css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+        <!-- Bootstrap -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	</head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container col-lg-12">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="col-lg-12" id="navbar" align="center">
+                    <a class="btn pull-left col-lg-3"><span style="font-size: 12pt"><font color="white">Sesi&oacute;n iniciada:</font><img src="../imagenes/iconos/user2.ico" width="25" height="25" alt=""></span><font color="red"><span id="logedUser"></span></font></a>
+                    <a class="btn text-center col-lg-6"><font color="white"><span id="fecha" style="font-size: 12pt"></span></font></a>
+                    <a class="btn pull-right col-lg-3" href="../../controlador/ruteador/CerrarSesion.php" id="cerrarSesion" style=""><span style="font-size: 12pt"><img src="../imagenes/iconos/apaga.ico" width="25" height="25" alt=""><font color="white">Cerrar sesi&oacute;n</font></span></a>
+                </div><!--/.navbar-collapse -->
+            </div>
+        </nav> 
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron" style="background-image: url(../imagenes/tituloSup.png); background-position-x: 0px; background-position-y: 51px; background-repeat: no-repeat">
+            <div id ="cabecera" class="container text-center">
+                <h1 style="font-family: calibri">Estados</h1>
+            </div>
+        </div>
+        <nav class="navbar navbar-default" id="navegador" style="background-color: #393185; margin-top: -56px">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav">
+                        <li><a class="omover" href="admin.html"><span><img src="../imagenes/iconos/home2.ico" width="20" height="20" alt="Inicio"><font color="white" style="font-size: 12pt"> Inicio</font></span></a></li>
+                        <li><a class="omover" href="orden.html"><span><img src="../imagenes/iconos/Orden2.ico" width="20" height="20" alt=""><font color="white"> Órdenes</font></span></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" id="menuAdmin"><span><img src="../imagenes/iconos/configLlave.ico" width="20" height="20" alt=""><font color="white"> Administrar</font></span><span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="cliente.html"><span><img class="pull-left" src="../imagenes/iconos/clientes.ico" width="25" height="25" alt=""> &nbsp;Clientes</span></a></li>
+                                    <li><a href="estado.html"><span><img src="../imagenes/iconos/estado2.ico" width="25" height="25" alt=""> Estados</span></a></li>
+                                    <li><a href="foto.html"><span><img src="../imagenes/iconos/foto.ico" width="25" height="25" alt=""> Fotos</span></a></li>
+                                    <li><a href="telefono.html"><span><img src="../imagenes/iconos/cel2.ico" width="25" height="25" alt=""> Tel&eacute;fonos</span></a></li>
+                                    <li><a href="usuario.html"><span><img src="../imagenes/iconos/user.ico" width="25" height="25" alt=""> Usuarios</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        
+        
+        
+        <div class="col-lg-12 clearfix"></div>
+        <div class="clearfix abajo">
+            <!--CAMPO OCULTO PARA EL ID_USER DE LA SESSION DE PHP -->
+            <div class="form-group">
+                <input class="form-control" type="hidden" id="id_user" name="id_user">
+            </div>
+            <!--fin campo oculto-->
+        </div>
+ <!--COMIENZO MODAL-->
+        <div class="modal fade" id="modalEstado" tabindex="-1" role="dialog" aria-labelledby="modalEstado" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="formEstado" class="form-horizontal" method="post" enctype="multipart/form-data">
+                        <div class="modal-header text-center" id="mHeader">
+                            <button type="button" class="close" data-dismiss="modal" id="equis" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title text-center" id="tituloModal">Nuevo Estado</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <input class="form-control" type="hidden" id="id_estado" name="id_estado">
+                            </div>
+                            
+                            <div class="row divider"></div>
+                            <div class="form-group">
+                                <label class='col-lg-3'>Descripción</label>
+                                <div class='col-lg-9'>
+                                    <input class="form-control" type="text" id="descripcion" name="descripcion" maxlength="50">
+                                </div>
+                            </div>
+                            <div class="row divider"></div>
+                            <div class="form-group">
+                                <label class='col-lg-3'>Color</label>
+                                <div class='col-lg-5'>                                    
+                                    <input class="form-control kolorPicker" type="text" id="color" name="color" placeholder="Haga Click aqu&iacute; para seleccionar el color">
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label class='col-lg-2'></label>
+                                <div class='col-lg-10'>
+                                    <input class="form-control" type="hidden" id="accion" name="accion" value="guardar">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class='col-lg-2'></label>
+                                <div class='col-lg-10'>
+                                    <input class="form-control" type="hidden" id="nombreFormulario" name="nombreFormulario" value="Estado">
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                        
+                        
+                        <div class="modal-footer">
+                            <button type="button" id="cancelar" name="cancelar" class="btn btn-default">Cerrar</button>
+                            <button type="button" id="guardar" name="accion" class="btn btn-primary" value=""></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--FIN MODAL-->
+
+        <div class="col-lg-12"></div>
+        <div class="row center-slide">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <nav class="navbar navbar-default">
+                    <div class="col-lg-4"></div>
+                    <div class="container-fluid">
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <form class="navbar-form navbar-left" role="search">
+                                <button class="btn btn-primary btn-lg btn-toolbar right" id="agregar" value="agregar" style="background-color: #393185; border-color: #312652; border-style: solid; border-width: 2px;color: #ffffff">
+                                    <span class="glyphicon glyphicon-plus-sign left"> </span> Agregar
+                                </button>
+                                <button class="btn btn-primary btn-lg" id="buscar" value="Buscar" style="background-color: #393185; border-color: #312652; border-style: solid; border-width: 2px;color: #ffffff">
+                                    <span class="glyphicon glyphicon-search"> </span> Buscar
+                                </button>
+                            </form>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </div>
+            <div class="col-lg-4"></div><!-- Cierra el navbar que tiene el buscar y las opciones agregar imprimir -->
+        </div>
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <table id="tablaEstado" class="display text-center" cellspacing="0" width="100%" style="font-style:normal;color: #393185">
+                    <thead class="center-text">
+                        <tr>
+                            <th class="text-center col-lg-1">Selección</th>
+                            <th class="text-center col-lg-1">Descripción</th>
+                            <th class="text-center col-lg-2 oculto">Fecha Alta</th>
+                            <th class="text-center col-lg-2 oculto">Fecha Baja</th>
+                            <th class="text-center col-lg-2">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaEstado">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+        <div class="container">
+            <div class="form-signin">           
+                <a href="../../index.html" class="btn btn-default btn-lg btn-block">SALIR</a>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="label-info text-center container well col-lg-10" style="margin-top: 15px"> 
+            <h5>
+                &copy; 2017 QFSoft Todos los Derechos Reservados
+            </h5>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!--<script src="../js/jquery/jquery-1.11.1.min.js"></script>-->
+        <script src="../js/jquery/jquery-3.2.0.min.js"></script>
+        <script src="../js/bootstrap/bootstrap.min.js"></script>
+        <script src="../js/jquery.kolorpicker.js" type="text/javascript"></script> 
+        <script src="../js/jquery.dataTables.js" type="text/javascript"></script>
+        <script src="../js/dataTables.bootstrap.js" type="text/javascript"></script>
+        <script src="../js/jquery/bootbox.js" type="text/javascript"></script>
+        <script src="../js/funcionesEstado.js" type="text/javascript"></script>
+    </body>
+</html>

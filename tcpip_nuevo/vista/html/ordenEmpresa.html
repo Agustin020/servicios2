@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Ordenes</title>
+        <link href="../css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/letra.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container col-lg-12">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="col-lg-12" id="navbar" align="center">
+                    <a class="btn pull-left col-lg-3"><span style="font-size: 12pt"><font color="white">Sesi&oacute;n iniciada:</font><img src="../imagenes/iconos/user2.ico" width="25" height="25" alt=""></span><font color="red"><span id="logedUser"></span></font></a>
+                    <a class="btn text-center col-lg-6"><font color="white"><span id="fecha" style="font-size: 12pt"></span></font></a>
+                    <a class="btn pull-right col-lg-3" href="../../controlador/ruteador/CerrarSesion.php" id="cerrarSesion" style=""><span style="font-size: 12pt"><img src="../imagenes/iconos/apaga.ico" width="25" height="25" alt=""><font color="white">Cerrar sesi&oacute;n</font></span></a>
+                </div><!--/.navbar-collapse -->
+            </div>
+        </nav> 
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron" style="background-image: url(../imagenes/tituloSup.png); background-position-x: 0px; background-position-y: 51px; background-repeat: no-repeat">
+            <div id ="cabecera" class="container text-center">
+                <h1 style="font-family: calibri">Órdenes</h1>
+            </div>
+        </div>
+        <nav class="navbar navbar-default" id="navegador" style="background-color: #393185; margin-top: -56px">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+        
+        
+        
+        <div class="col-lg-12 clearfix"></div>
+        <div class="clearfix abajo">
+            <!--CAMPO OCULTO PARA EL ID_USER DE LA SESSION DE PHP -->
+            <div class="form-group">
+                <input class="form-control" type="hidden" id="id_user" name="id_user">
+            </div>
+            <!--fin campo oculto-->
+        </div>
+        
+        
+        <!-- Button trigger modal -->
+        <div class="col-lg-12"></div>
+        <div class="row">
+            <div class="col-lg-12">
+               <!-- DATATABLE-->
+                <table id="tablaOrdenes" class="display text-center" cellspacing="0" width="100%" style="font-style:normal;color: #393185">
+                    <thead>
+                        <tr>
+                            <th class="text-center oculto">Id Cliente</th>
+                            <th class="text-center">Cliente</th>
+                            <th class="text-center">Fecha</th>
+                            <th class="text-center">Nro Orden</th>
+                            <th class="text-center">Descripción</th><!--equipo-->
+                            <th class="text-center oculto">Falla Cliente</th>
+                            <th class="text-center oculto">Falla Detectada</th>
+                            <th class="text-center">Nro. Siniestro</th>
+                            <th class="text-center">Presupuesto</th>
+                            <th class="text-center oculto">Entregado</th>    
+                            <th class="text-center oculto">Id Estado</th>    
+                            <th class="text-center">Estado</th>
+                            <th class="text-center oculto">Id Usuario</th>
+                            <th class="text-center">Tecnico</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaOrdenes">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 30px">
+            <div class="form-signin">           
+                <a href="../../index.html" class="btn btn-default btn-lg btn-block">SALIR</a>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="label-info text-center container well col-lg-10" style="margin-top: 15px"> 
+            <h5>
+                &copy; 2017 QFSoft Todos los Derechos Reservados
+            </h5>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!--<script src="../js/jquery/jquery-1.11.1.min.js"></script>-->
+        <script src="../js/jquery/jquery-3.2.0.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap/bootstrapValidator.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.dataTables.js" type="text/javascript"></script>
+        <script src="../js/jquery/bootbox.js" type="text/javascript"></script>
+        <script src="../js/funcionesOrdenEmpresa.js" type="text/javascript"></script>
+    </body>
+</html>

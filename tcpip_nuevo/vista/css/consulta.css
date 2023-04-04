@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* CSS Document */
+#total{
+	width: 544px;
+	height: auto;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+/*	margin-top: 45px;*/
+	background-color: #FFFFFF;
+	margin-bottom: 15px;
+	/* [disabled]padding-top: 35px; */
+}
+#logo{
+	width: 544px;
+	height: 85px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:6px;
+	
+}
+#contenido{
+	width: 544px;
+	height: 215px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+#pie{
+	width: 544px;
+	height: 33px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+        text-align:none;
+        left: -30px;
+	
+}
+#mensaje{
+	width: 484px;
+	height: 40px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+
+	
+}
+.h1{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#000;
+	text-align:center;	
+}
+#consulta{
+	width: 484px;
+	height: 55px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 6px;
+
+	
+}
+/*#consulta1{
+	width: 310px;
+	height: 50px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+
+}*/
+.h2{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000;
+
+}
+.h3{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color: #393185;
+
+}
+#boton{
+	width: 292px;
+	height: 24px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 6px;
+	margin-bottom:3px;
+}
+#resultado{
+	width: auto;
+	height: auto;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+#repuesta{
+	width: auto;
+	height: auto;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;	
+}
+#contador{
+	width: 484px;
+	height: 20px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding-top: 6px
+}
