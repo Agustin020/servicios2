@@ -30,8 +30,23 @@
         $(document).ready(function() {
             $('#table').DataTable({
                 dom: 'Bfrtip',
-                buttons: [
-                    'excel', 'print', 'pdf'
+                buttons: [{
+                        extend: 'pdfHtml5',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        title: 'Ordenes'
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        autoFilter: true,
+                        sheetName: 'Exported data',
+                        title: 'Ordenes'
+                    },
+                    {
+                        extend: 'print',
+                        title: 'Ordenes',
+                        orientation: 'landscape',
+                    }
                 ],
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
@@ -42,12 +57,18 @@
 
 </head>
 
+<?php
+require_once("../../modelo/OrdenModel.php");
+$mdlOrdenes = new mdlOrdenes();
+$listaOrdenes = $mdlOrdenes->mostrarOrdenes();
+?>
+
 <body>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="table-responsive pt-5">
-                    <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <div class="table-responsive-xxl pt-5">
+                    <table id="table" class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">ID Orden</th>
@@ -57,6 +78,7 @@
                                 <th scope="col">Observaciones</th>
                                 <th scope="col">N° Siniestro</th>
                                 <th scope="col">Monto</th>
+                                <th scope="col">Entregado</th>
                                 <th scope="col">Estado</th>
                                 <th scope="col">ID Usuario</th>
                                 <th scope="col">Fecha alta</th>
@@ -123,7 +145,7 @@
         </div>
     </div>
 
-    
+
 
 </body>
 

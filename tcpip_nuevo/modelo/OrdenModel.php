@@ -1,5 +1,5 @@
 <?php
-require_once('controlador/persistencia/Conexion.php');
+require_once('../../controlador/persistencia/Conexion.php');
 
 class mdlOrdenes extends Conexion
 {
